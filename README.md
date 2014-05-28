@@ -25,3 +25,4 @@ Copy config.js.template to config.js and adjust accordingly before attempting to
 
 * Set headers on the command line arguments
 * Set host on command line arguments
+* Support request bodies (via a file path perhaps)
