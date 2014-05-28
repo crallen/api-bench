@@ -1,0 +1,8 @@
+config = {
+  host: '<< my domain name >>',
+  requestHeaders: {
+  	'X-AC-Auth-Token': '<< my access token>>'
+  }
+};
+
+module.exports = config;

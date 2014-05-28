@@ -1,0 +1,15 @@
+{
+  "name": "api-bench",
+  "version": "0.0.0",
+  "description": "hacked together benchmark utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Allen",
+  "license": "MIT",
+  "dependencies": {
+    "fast-stats": "0.0.2",
+    "nomnom": "~1.7.0"
+  }
+}
