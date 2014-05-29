@@ -1,5 +1,4 @@
 config = {
-  host: '<< my domain name >>',
   requestHeaders: {
   	'X-AC-Auth-Token': '<< my access token>>',
   	'User-Agent': 'api-bench'
