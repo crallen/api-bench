@@ -2,6 +2,22 @@
 var nomnom = require('nomnom');
 var apiBench = require('../index');
 
+function parseHeaders(rawHeaders) {
+  var result = {};
+  if(rawHeaders) {
+    for(var i = 0, len = rawHeaders.length; i < len; i++) {
+      var index = rawHeaders[i].indexOf(':');
+      if(index === -1) {
+        continue;
+      }
+      var key = rawHeaders[i].substring(0, index);
+      var value = rawHeaders[i].substring(index + 1).trim();
+      result[key] = value;
+    }
+  }
+  return result;
+}
+
 var optsConfig = {
   uri: {
     position: 0,
@@ -30,6 +46,11 @@ var optsConfig = {
     help: 'HTTP method',
     default: 'GET'
   },
+  header: {
+    abbr: 'H',
+    help: 'Specify HTTP headers to use on the requests, can be specified multiple times',
+    list: true
+  },
   script: {
     abbr: 's',
     help: 'Execution script that the benchmark will follow'
@@ -40,6 +61,7 @@ var optsConfig = {
   }
 };
 
-var opts = nomnom.options(optsConfig).parse();
+var opts = nomnom.script("api-bench").options(optsConfig).parse();
+opts.header = parseHeaders(opts.header);
 
 apiBench.start(opts);

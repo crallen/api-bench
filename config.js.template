@@ -1,8 +1,0 @@
-config = {
-  requestHeaders: {
-  	'X-AC-Auth-Token': '<< my access token>>',
-  	'User-Agent': 'api-bench'
-  }
-};
-
-module.exports = config;
