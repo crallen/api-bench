@@ -6,7 +6,7 @@ Hacked together utility to get some basic metrics. Pretty specific to the purpos
 Usage information available via `bin\api-bench --help`.
 
 ```shell
-$ bin\api-bench --help
+$ bin/api-bench --help
 
 Usage: api-bench <uri> [options]
 
