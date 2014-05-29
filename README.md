@@ -22,8 +22,6 @@ Options:
    -o, --output       Destination file for output, uses stdout if not specified
 ```
 
-Copy config.js.template to config.js and adjust accordingly before attempting to use.
-
 ### TODO
 
 * Support request bodies (via a file path perhaps)
