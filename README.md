@@ -3,7 +3,7 @@ api-bench
 
 Hacked together utility to get some basic metrics. Pretty specific to the purpose it was designed for. Work in progress.
 
-Usage information available via `node index.js --help`.
+Usage information available via `bin\api-bench --help`.
 
 ```shell
 $ bin\api-bench --help
