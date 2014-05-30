@@ -1,10 +1,6 @@
 var assert = require('assert');
-var nock = require('nock');
+var localhost = require('./localhost');
 var RequestJob = require('../lib/request-job');
-
-var localhost = nock('https://localhost')
-  .get('/api/v1/products')
-  .reply(200);
 
 describe('RequestJob', function() {
 
@@ -20,12 +16,12 @@ describe('RequestJob', function() {
     var job = new RequestJob(1, {
       uri: 'https://localhost/api/v1/products'
     });
-    job.run(function(result) {
-      assert(result.duration);
+    job.on('end', function(result) {
       assert.equal(200, result.status);
       assert.equal(1, result.id);
       done();
     });
+    job.run();
   });
 
 });
