@@ -4,6 +4,16 @@ var Queue = require('../lib/queue');
 var Job = require('../lib/job');
 
 describe('Queue', function() {
+
+  it('does not start until start is called', function() {
+    var queue = new Queue(1);
+    for(var i = 1; i <= 10; i++) {
+      var job = new Job(i);
+      queue.add(job);
+    }
+    assert.equal(10, queue.jobsWaiting.length);
+    assert.equal(0, queue.jobCounter);
+  });
   
   it('raises job done event when each job is finished', function(done) {
     var queue = new Queue(1);
